@@ -29,7 +29,7 @@ public class TestaRelctoMvtcaoCategoria {
 		movimentacao.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		movimentacao.setData(LocalDateTime.now());
 		movimentacao.setValor(new BigDecimal(300.0));
-		movimentacao.setCategoria(Arrays.asList(categoria, categoria2));
+		movimentacao.setCategorias(Arrays.asList(categoria, categoria2));
 		movimentacao.setConta(conta);
 
 /*		List<Categoria> categorias = new ArrayList<Categoria>();
@@ -42,7 +42,7 @@ public class TestaRelctoMvtcaoCategoria {
 		movimentacao2.setTipoMovimentacao(TipoMovimentacao.SAIDA);
 		movimentacao2.setData(LocalDateTime.now());
 		movimentacao2.setValor(new BigDecimal(250.0));
-		movimentacao2.setCategoria(Arrays.asList(categoria, categoria2));
+		movimentacao2.setCategorias(Arrays.asList(categoria, categoria2));
 		movimentacao.setConta(conta);
 		
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("contas");

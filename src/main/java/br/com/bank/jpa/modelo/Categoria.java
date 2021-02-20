@@ -13,10 +13,16 @@ public class Categoria {
 	private Long id;
 	private String nome;
 	
+	@Override
+	public String toString() {
+		return nome + " - " + id;
+	}
+	
 	@Deprecated // é usado para indicar que o construtor nao sera usado por mais ninguem
 	public Categoria() {} //o hibernate precisa do construtor padrão por regra
 
 	public Categoria(String nome) {
+		super();
 		this.nome = nome;
 	}
 

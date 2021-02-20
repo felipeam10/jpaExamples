@@ -2,6 +2,7 @@ package br.com.bank.jpa.modelo;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -12,6 +13,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Movimentacao {
@@ -26,9 +29,9 @@ public class Movimentacao {
 	private String descricao;
 	private BigDecimal valor;
 	
-	@ManyToMany
-	private List<Categoria> categoria; //associa a movimentacao com a categoria. É a categoria dessa movimentacao
-
+	@OneToMany
+	private List<Categoria> categorias = new ArrayList<Categoria>();
+	
 	@ManyToOne
 	private Conta conta;
 
@@ -80,12 +83,12 @@ public class Movimentacao {
 		this.descricao = descricao;
 	}
 
-	public List<Categoria> getCategoria() {
-		return categoria;
+	public List<Categoria> getCategorias() {
+		return categorias;
 	}
 
-	public void setCategoria(List<Categoria> categoria) {
-		this.categoria = categoria;
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 	
 	
